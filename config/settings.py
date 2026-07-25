@@ -14,11 +14,10 @@ load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") ="True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    "crm-backend-onta.onrender.com",
-]
+ALLOWED_HOSTS = ["*"]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -116,19 +115,17 @@ AUTH_USER_MODEL = "users.User"
 
 # CORS Settings
 CORS_ALLOWED_ORIGINS = [
-    # "http://localhost:5173",
-    # "http://localhost:3000",  # ← ADDED
-    # "https://latest-crm.netlify.app",
-    CORS_ALLOW_ALL_ORIGINS = True
-    CORS_ALLOW_CREDENTIALS = True
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://latest-crm.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "http://localhost:3000",  # ← ADDED
-     "https://latest-crm.netlify.app",
+    "http://localhost:3000",
+    "https://latest-crm.netlify.app",
 
 ]
 
