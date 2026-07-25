@@ -21,12 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # API Documentation
-    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('api/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
     # API Routes
-    path('auth/', include('authentication.urls')),
-    path('users/', include('users.urls')),
-    path('leads/', include('leads.urls')),
-    path('dashboard/', include('dashboard.urls')),
+    path('api/auth/', include('authentication.urls')),
+    path('api/users/', include('users.urls')),
+    path('api/leads/', include('leads.urls')),
+    path('api/dashboard/', include('dashboard.urls')),
 ]
